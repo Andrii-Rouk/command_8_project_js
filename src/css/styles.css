@@ -5,6 +5,7 @@
   |============================
 */
 /* Common styles */
+@import 'modern-normalize';
 @import url('./base.css');
 
 /* Sections style */
