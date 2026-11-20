@@ -1,5 +1,7 @@
 @import '@fontsource-variable/rubik';
+@import '@fontsource/gloock';
 
 :root {
   --font-family-base: 'Rubik Variable', sans-serif;
+  --font-family-display: 'Gloock', Georgia, serif;
 }
