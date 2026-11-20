@@ -20,7 +20,7 @@
   width: 100%;
   max-width: 335px;
   margin: auto;
-  padding: 16px 16px 64px;
+  padding: 16px 64px;
   background: #fbeee6;
   border-radius: 16px;
 }
@@ -31,7 +31,7 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  margin: 0 0 0px auto;
+  margin: 0;
   padding: 0;
   background: transparent;
   border: none;
@@ -71,7 +71,7 @@
   font-weight: 600;
   line-height: 1.2;
   color: #0b0500;
-  letter-spacing: -1%;
+  letter-spacing: -0, 01em;
 }
 
 .book-modal-author {
@@ -238,24 +238,14 @@
 
   .book-modal {
     max-width: 704px;
-    padding: 32px 32px 64px 32px;
+    padding: 64px 32px;
   }
 
   .book-modal-content {
-    flex-direction: row;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 309px) minmax(0, 1fr);
+    align-items: start;
     gap: 24px;
-  }
-
-  .book-modal-image {
-    flex: 1 1 0;
-    min-width: 0;
-    width: auto;
-  }
-
-  .book-modal-info {
-    flex: 1 1 0;
-    min-width: 0;
   }
 }
 
@@ -280,10 +270,8 @@
   }
 
   .book-modal-content {
-    display: grid;
-    grid-template-columns: 344px minmax(0, 1fr);
-    align-items: start;
-    gap: 24px;
+    max-width: 1092px;
+    margin-inline: auto;
   }
 
   .book-order-form {

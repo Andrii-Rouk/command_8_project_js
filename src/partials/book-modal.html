@@ -1,13 +1,26 @@
 <div class="book-modal-backdrop is-hidden">
   <div class="book-modal">
-    <button class="book-modal-close" type="button">
-      <svg class="book-modal-close-icon" width="14" height="14">
+    <button
+      class="book-modal-close"
+      type="button"
+      aria-label="Close book details"
+    >
+      <svg
+        class="book-modal-close-icon"
+        width="14"
+        height="14"
+        aria-hidden="true"
+      >
         <use href="/icons/sprite.svg#close"></use>
       </svg>
     </button>
 
     <div class="book-modal-content">
-      <img class="book-modal-image" src="" alt="Обкладинка обраної книги" />
+      <img
+        class="book-modal-image"
+        src="../img/mobile/article-bookstore-1x.webp"
+        alt="Обкладинка обраної книги"
+      />
 
       <div class="book-modal-info">
         <h2 class="book-modal-title"></h2>
@@ -16,7 +29,13 @@
 
         <form class="book-order-form">
           <div class="book-quantity">
-            <button class="quantity-decrease" type="button">−</button>
+            <button
+              class="quantity-decrease"
+              type="button"
+              aria-label="Decrease quantity"
+            >
+              −
+            </button>
 
             <input
               class="quantity-input"
@@ -24,9 +43,16 @@
               name="quantity"
               value="1"
               min="1"
+              aria-label="Quantity"
             />
 
-            <button class="quantity-increase" type="button">+</button>
+            <button
+              class="quantity-increase"
+              type="button"
+              aria-label="Increase quantity"
+            >
+              +
+            </button>
           </div>
 
           <button class="book-modal-add-to-cart" type="button">
