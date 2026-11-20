@@ -3,24 +3,25 @@
     <div class="footer-left">
       <a href="./index.html" class="footer-logo">
         <svg width="83" height="21">
-          <use href="../public/icons/sprite.svg#booksy-logo" />
+          <use href="./icons/sprite.svg#booksy-logo" />
         </svg>
       </a>
 
       <nav class="footer-nav" aria-label="Footer navigation">
         <ul class="footer-nav-list">
-          <li>
+          <li class="footer-nav-link">
             <a href="#home">Home</a>
           </li>
 
-          <li>
+          <li class="footer-nav-link">
             <a href="#books">Books</a>
           </li>
-          <li>
+
+          <li class="footer-nav-link">
             <a href="#feedback">Feedback</a>
           </li>
 
-          <li>
+          <li class="footer-nav-link">
             <a href="#location">Location</a>
           </li>
         </ul>
@@ -28,21 +29,26 @@
     </div>
 
     <div class="footer-join">
-      <label>
-        Join
-        <input
-          type="email"
-          name="email"
-          class="footer-join-input"
-          placeholder="Enter your email*"
-          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        />
-      </label>
-      <p>* Required field</p>
+      <p class="footer-join-text">Join</p>
+      <form class="footer-form">
+        <label>
+          <input
+            type="email"
+            name="email"
+            required
+            class="footer-join-input"
+            placeholder="Enter your email"
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          />
+        </label>
 
-      <button type="submit" class="btn-footer-join">Sign Up</button>
+        <button type="submit" class="btn-footer-join">Sign Up</button>
+      </form>
+      <p class="footer-required-text">* Required field</p>
+    </div>
 
-      <p>© 2025 Booksy. All rights reserved</p>
+    <div class="footer-wrap">
+      <p class="footer-police">© 2025 Booksy. All rights reserved</p>
     </div>
   </div>
 </footer>
