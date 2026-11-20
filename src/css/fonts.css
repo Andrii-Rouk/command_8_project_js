@@ -1,0 +1,5 @@
+@import '@fontsource-variable/rubik';
+
+:root {
+  --font-family-base: 'Rubik Variable', sans-serif;
+}
