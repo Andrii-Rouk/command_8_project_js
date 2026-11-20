@@ -1,12 +1,85 @@
-<dialog class="book-modal" id="book-modal" aria-labelledby="book-modal-title">
-  <form method="dialog">
-    <button type="submit" aria-label="Close book details">
-      <svg width="24" height="24" aria-hidden="true">
-        <use href="./icons/sprite.svg#close"></use>
+<div class="book-modal-backdrop is-hidden">
+  <div class="book-modal">
+    <button class="book-modal-close" type="button">
+      <svg class="book-modal-close-icon" width="14" height="14">
+        <use href="/icons/sprite.svg#close"></use>
       </svg>
     </button>
-  </form>
 
-  <h2 id="book-modal-title">Book details</h2>
-  <div class="book-modal-content"></div>
-</dialog>
+    <div class="book-modal-content">
+      <img class="book-modal-image" src="" alt="Обкладинка обраної книги" />
+
+      <div class="book-modal-info">
+        <h2 class="book-modal-title"></h2>
+        <p class="book-modal-author"></p>
+        <p class="book-modal-price"></p>
+
+        <form class="book-order-form">
+          <div class="book-quantity">
+            <button class="quantity-decrease" type="button">−</button>
+
+            <input
+              class="quantity-input"
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+            />
+
+            <button class="quantity-increase" type="button">+</button>
+          </div>
+
+          <button class="book-modal-add-to-cart" type="button">
+            Add To Cart
+          </button>
+
+          <button class="book-modal-buy-now" type="submit">Buy Now</button>
+        </form>
+
+        <div class="book-modal-accordion">
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Details</span>
+                <svg class="accordion-icon" width="24" height="24">
+                  <use href="/icons/sprite.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="book-modal-description"></p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Shipping</span>
+                <svg class="accordion-icon" width="24" height="24">
+                  <use href="/icons/sprite.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="book-modal-shipping"></p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger" type="button">
+                <span>Returns</span>
+                <svg class="accordion-icon" width="24" height="24">
+                  <use href="/icons/sprite.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="book-modal-returns"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
