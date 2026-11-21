@@ -1,9 +1,48 @@
-<header>
-  <div class="container">
-    <a href="./index.html" aria-label="Booksy home">
-      <svg width="83" height="21" aria-hidden="true">
+<header class="header" id="home">
+  <div class="container header__container">
+    <a class="header__logo" href="#home" aria-label="Booksy home">
+      <svg class="header__logo-icon" width="83" height="21" aria-hidden="true">
         <use href="./icons/sprite.svg#booksy-logo"></use>
       </svg>
     </a>
+
+    <button
+      class="header__menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="site-navigation"
+      aria-expanded="false"
+    >
+      <svg
+        class="header__menu-icon header__menu-icon--open"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#menu"></use>
+      </svg>
+      <svg
+        class="header__menu-icon header__menu-icon--close"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+    <nav
+      class="header__navigation"
+      id="site-navigation"
+      aria-label="Main navigation"
+    >
+      <ul class="header__nav-list">
+        <li><a class="header__nav-link" href="#home">Home</a></li>
+        <li><a class="header__nav-link" href="#books">Books</a></li>
+        <li><a class="header__nav-link" href="#feedbacks">Feedbacks</a></li>
+        <li><a class="header__nav-link" href="#events">Events</a></li>
+        <li><a class="header__nav-link" href="#location">Location</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
