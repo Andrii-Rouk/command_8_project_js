@@ -69,7 +69,7 @@
 }
 
 .events__item {
-  flex: 0 0 342px;
+  flex: 0 0 min(100%, 342px);
   min-width: 0;
   scroll-snap-align: start;
 }
@@ -102,7 +102,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 8px;
   padding: 0;
 }
 
@@ -142,6 +142,7 @@
   width: 100%;
   height: 32px;
   padding-block: 4px;
+  margin-top: 8px;
 }
 
 .events__register {
@@ -173,7 +174,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 48px;
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
 .events__pagination {
@@ -183,11 +184,11 @@
 }
 
 .events__dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--color-text);
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .events__dot--active {
@@ -206,11 +207,18 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 0;
+  border: 1px solid rgb(11 5 0 / 15%);
+  border-radius: 50%;
   background-color: var(--color-accent);
-  color: #fff;
-  font-size: 20px;
+  color: #0b0500;
   cursor: pointer;
+}
+
+.events__arrow-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
 .events__arrow:focus-visible,
@@ -232,10 +240,6 @@
     max-width: 704px;
   }
 
-  .events__title {
-    font-size: 40px;
-  }
-
   .events__subtitle {
     max-width: 560px;
   }
@@ -248,23 +252,12 @@
     flex-basis: 340px;
   }
 
-  .events__card {
-    gap: 10px;
-  }
-
-  .events__content {
-    gap: 16px;
+  .events__dot:last-child {
+    display: none;
   }
 }
 
 @media (min-width: 1440px) {
-  .events {
-    padding-block: 80px;
-  }
-
-  .events__container {
-    gap: 40px;
-  }
 
   .events__header {
     max-width: 768px;
@@ -272,10 +265,6 @@
 
   .events__title {
     font-size: 48px;
-  }
-
-  .events__subtitle {
-    max-width: 768px;
   }
 
   .events__list {
