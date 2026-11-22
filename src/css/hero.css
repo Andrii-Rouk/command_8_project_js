@@ -2,22 +2,13 @@
   padding-bottom: 32px;
 }
 
-.hero-slides {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
 .hero-slide {
   --hero-promo-width: 172px;
   --hero-promo-size: 20px;
   --hero-promo-line-height: 1.4;
 
   position: relative;
-  flex: 0 0 100%;
   min-width: 0;
-  scroll-snap-align: start;
 }
 
 .hero-slide:nth-child(2) {
@@ -134,11 +125,6 @@
 }
 
 @media (min-width: 768px) {
-  .hero-slides {
-    overflow-x: hidden;
-    scroll-snap-type: none;
-  }
-
   .hero-slide {
     --hero-promo-width: 274px;
     --hero-promo-size: 32px;
@@ -191,10 +177,6 @@
 }
 
 @media (min-width: 1440px) {
-  .hero-slides {
-    gap: 24px;
-  }
-
   .hero-slide,
   .hero-slide:nth-child(2) {
     --hero-promo-width: 392px;
