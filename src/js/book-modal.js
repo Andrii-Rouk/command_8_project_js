@@ -1,3 +1,4 @@
+import { getBooksById } from './books.api.js';
 import Accordion from 'accordion-js';
 
 new Accordion('.book-modal-accordion');
@@ -22,6 +23,7 @@ const addToCartButton = document.querySelector('.book-modal-add-to-cart');
 const description = document.querySelector('.book-modal-description');
 const shipping = document.querySelector('.book-modal-shipping');
 const returns = document.querySelector('.book-modal-returns');
+const orderForm = document.querySelector('.book-order-form');
 
 function openModal() {
   backdrop.classList.remove('is-hidden');
@@ -33,7 +35,41 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-document.addEventListener('click', event => {
+function fillModal(book) {
+  bookImage.src = book.book_image || '';
+  bookImage.alt = book.title || 'Обкладинка обраної книги';
+
+  bookTitle.textContent = book.title || '';
+  bookAuthor.textContent = book.author || '';
+  bookPrice.textContent = book.price || '';
+
+  description.textContent = book.description || '';
+  shipping.textContent = book.shipping || '';
+  returns.textContent = book.returns || '';
+
+  quantityInput.value = 1;
+}
+
+decreaseButton.addEventListener('click', () => {
+  const quantity = Number(quantityInput.value);
+  quantityInput.value = Math.max(1, quantity - 1);
+});
+
+increaseButton.addEventListener('click', () => {
+  const quantity = Number(quantityInput.value);
+  quantityInput.value = quantity + 1;
+});
+
+addToCartButton.addEventListener('click', () => {
+  console.log('Кількість книг у кошику:', Number(quantityInput.value));
+});
+
+orderForm.addEventListener('submit', event => {
+  event.preventDefault();
+  alert('Дякуємо за покупку');
+});
+
+document.addEventListener('click', async event => {
   const learnMoreButton = event.target.closest('.books-list__btn');
 
   if (!learnMoreButton) {
@@ -41,9 +77,14 @@ document.addEventListener('click', event => {
   }
 
   const bookId = learnMoreButton.dataset.bookId;
-  console.log('Book ID:', bookId); // Временно проверяем, что ID получен
 
-  openModal();
+  try {
+    const book = await getBooksById(bookId);
+    fillModal(book);
+    openModal();
+  } catch (error) {
+    console.error('Не вдалося знайти книгу', error.message);
+  }
 });
 
 closeButton.addEventListener('click', closeModal);
