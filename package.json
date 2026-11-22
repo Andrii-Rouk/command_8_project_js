@@ -20,6 +20,7 @@
   "dependencies": {
     "@fontsource-variable/rubik": "^5.3.0",
     "@fontsource/gloock": "^5.3.0",
+    "accordion-js": "^4.0.0",
     "axios": "^1.21.1",
     "modern-normalize": "^3.0.1",
     "swiper": "^14.4.0",
