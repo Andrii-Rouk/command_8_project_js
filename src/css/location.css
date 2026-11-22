@@ -32,7 +32,7 @@
 
 .location__label {
   margin: 0 0 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -65,15 +65,14 @@
 .location__contact {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
 }
 
 .location__icon {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .location__contact-info {
@@ -85,15 +84,16 @@
 
 .location__contact-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .location__link {
   display: inline-block;
   color: inherit;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   text-decoration: underline;
   overflow-wrap: anywhere;
@@ -106,7 +106,7 @@
 
 .location__address {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
