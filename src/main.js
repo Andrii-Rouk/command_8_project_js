@@ -5,3 +5,4 @@ import './js/book-modal.js';
 import './js/feedbacks-slider.js';
 import './js/events.js';
 import './js/contact-modal.js';
+import './js/scroll-up.js';
