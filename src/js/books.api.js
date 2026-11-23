@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://books-backend.p.goit.global';
+axios.defaults.baseURL = 'https://books-backend-v2.b.goit.study';
 
 export const getCategoryList = async () => {
   try {
