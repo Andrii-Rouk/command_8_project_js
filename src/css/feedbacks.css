@@ -29,9 +29,7 @@
 }
 
 .feedbacks-list {
-  /* display: grid; */
-  grid-template-columns: 1fr;
-  gap: 24px;
+  align-items: stretch;
   margin: 0 0 32px;
   padding: 0;
   list-style: none;
@@ -39,6 +37,7 @@
 
 .feedbacks-item {
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
@@ -140,10 +139,6 @@
     font-weight: 600;
     font-size: 48px;
   }
-
-  .feedbacks-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -152,13 +147,10 @@
     font-weight: 400;
     font-size: 48px;
   }
-
-  .feedbacks-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .feedbacks-slider {
+  height: auto;
   overflow: hidden;
   width: 100%;
   margin-bottom: 32px;
