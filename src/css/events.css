@@ -104,6 +104,7 @@
   align-items: flex-start;
   gap: 8px;
   padding: 0;
+  flex-grow: 1;
 }
 
 .events__name,
@@ -142,7 +143,7 @@
   width: 100%;
   height: 32px;
   padding-block: 4px;
-  margin-top: 8px;
+  margin-top: auto;
 }
 
 .events__register {
@@ -208,10 +209,15 @@
   height: 48px;
   padding: 0;
   border: 1px solid rgb(11 5 0 / 15%);
-  border-radius: 50%;
+  border-radius: 0;
   background-color: var(--color-accent);
   color: #0b0500;
   cursor: pointer;
+}
+
+.events__arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
 }
 
 .events__arrow-icon {
@@ -258,7 +264,6 @@
 }
 
 @media (min-width: 1440px) {
-
   .events__header {
     max-width: 768px;
   }
@@ -293,8 +298,10 @@
   }
 }
 
-.events__arrow:hover {
-  background-color: var(--color-text);
+@media (hover: hover) {
+  .events__arrow:enabled:hover {
+    background-color: #fceee6;
+  }
 }
 
 .events__register:hover {

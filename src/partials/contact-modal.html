@@ -2,7 +2,7 @@
   <div class="contact-modal">
     <button class="cont-close-btn">
       <svg class="btn" width="14.06" height="14.06">
-        <use href="../public/icons/sprite.svg#close"></use>
+        <use href="./icons/sprite.svg#close"></use>
       </svg>
     </button>
 
@@ -22,8 +22,9 @@
             type="text"
             autofocus
             placeholder="Ann"
+            required
           />
-          <p class="contact-form-error is-hidden">Error text</p>
+          <p class="contact-form-error is-hidden">Please enter your name.</p>
         </div>
 
         <div class="contact-email contact-input">
@@ -34,8 +35,11 @@
             id="input-email"
             type="email"
             placeholder="hello@booksy.com"
+            required
           />
-          <p class="contact-form-error is-hidden">Error text</p>
+          <p class="contact-form-error is-hidden">
+            Please enter a valid email address.
+          </p>
         </div>
 
         <div class="contact-message contact-input">
@@ -47,7 +51,7 @@
             rows="5"
             placeholder="Type your message..."
           ></textarea>
-          <p class="contact-form-error is-hidden">Error text</p>
+          <p class="contact-form-error is-hidden">Please enter your message.</p>
         </div>
       </div>
 

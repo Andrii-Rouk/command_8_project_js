@@ -20,12 +20,16 @@
   width: 100%;
   max-width: 335px;
   margin: auto;
-  padding: 16px 64px;
+  padding: 64px 16px;
   background: #fbeee6;
   border-radius: 16px;
 }
 
 .book-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +46,7 @@
 .book-modal-close-icon {
   width: 14px;
   height: 14px;
-  margin: 0 0 16px auto;
+  margin: 0;
 }
 
 .book-modal-content {
@@ -71,7 +75,7 @@
   font-weight: 600;
   line-height: 1.2;
   color: #0b0500;
-  letter-spacing: -0, 01em;
+  letter-spacing: -0.01em;
 }
 
 .book-modal-author {
