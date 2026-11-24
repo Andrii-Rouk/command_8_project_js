@@ -24,6 +24,8 @@ const description = document.querySelector('.book-modal-description');
 const shipping = document.querySelector('.book-modal-shipping');
 const returns = document.querySelector('.book-modal-returns');
 const orderForm = document.querySelector('.book-order-form');
+const SHOPPING_LIST_KEY = 'shopping-list';
+let selectedBook = null;
 
 function openModal() {
   backdrop.classList.remove('is-hidden');
@@ -36,6 +38,7 @@ function closeModal() {
 }
 
 function fillModal(book) {
+  selectedBook = book;
   bookImage.src = book.book_image || '';
   bookImage.alt = book.title || 'Обкладинка обраної книги';
 
@@ -61,7 +64,30 @@ increaseButton.addEventListener('click', () => {
 });
 
 addToCartButton.addEventListener('click', () => {
-  console.log('Кількість книг у кошику:', Number(quantityInput.value));
+  if (!selectedBook?._id) return;
+
+  const quantity = Number(quantityInput.value);
+  if (!Number.isSafeInteger(quantity) || quantity < 1) return;
+
+  try {
+    const shoppingList = JSON.parse(
+      localStorage.getItem(SHOPPING_LIST_KEY) ?? '[]'
+    );
+
+    const existingBook = shoppingList.find(
+      book => book._id === selectedBook._id
+    );
+
+    if (existingBook) {
+      existingBook.quantity += quantity;
+    } else {
+      shoppingList.push({ ...selectedBook, quantity });
+    }
+
+    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(shoppingList));
+  } catch (error) {
+    console.error('Не вдалося зберегти книгу в Shopping List:', error);
+  }
 });
 
 orderForm.addEventListener('submit', event => {
