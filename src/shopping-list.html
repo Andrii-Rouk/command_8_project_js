@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List | Booksy</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/shopping-list.css" />
+  </head>
+  <body>
+    <main class="container shopping-list-page">
+      >
+      <a href="./index.html#books">Back to Books</a>
+      <h1>Shopping List</h1>
+
+      <p id="shopping-list-empty" hidden>Your shopping list is empty.</p>
+      <ul id="shopping-list"></ul>
+
+      <nav id="shopping-pagination" aria-label="Shopping list pages" hidden>
+        <button type="button" id="shopping-prev">Previous</button>
+        <span id="shopping-page" aria-live="polite"></span>
+        <button type="button" id="shopping-next">Next</button>
+      </nav>
+    </main>
+    <script type="module" src="./js/shopping-list.js"></script>
+  </body>
+</html>
