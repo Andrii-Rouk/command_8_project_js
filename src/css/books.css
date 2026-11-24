@@ -43,7 +43,7 @@
   list-style: none;
 }
 
-.categories__item {
+.categories__item:not(:last-child) {
   margin-bottom: 16px;
 }
 
@@ -237,19 +237,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .books__heading {
-    font-size: 48px;
+    margin-bottom: 0px;
   }
 
   .categories__list {
     display: block;
-  }
-
-  .categories__item {
-    margin-bottom: 16px;
   }
 
   .categories__button {
