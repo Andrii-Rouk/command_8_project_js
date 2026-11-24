@@ -1,54 +1,59 @@
-const DESKTOP_BREAKPOINT = 1440;
-const DESKTOP_BOOKS_LIMIT = 24;
-const MOBILE_BOOKS_LIMIT = 10;
+function createBookCard(book) {
+  const card = document.createElement('li');
+  card.className = 'books__item';
 
-function getDefaultBooksLimit() {
-  return window.innerWidth >= DESKTOP_BREAKPOINT
-    ? DESKTOP_BOOKS_LIMIT
-    : MOBILE_BOOKS_LIMIT;
+  const title = document.createElement('h3');
+  title.className = 'books__title';
+  title.textContent = book.title || 'Untitled';
+
+  if (book.book_image) {
+    const image = document.createElement('img');
+    image.className = 'books__image';
+    image.src = book.book_image;
+    image.alt = title.textContent;
+    image.loading = 'lazy';
+    card.append(image);
+  }
+
+  const price = document.createElement('span');
+  price.className = 'price';
+  if (book.price != null && book.price !== '') {
+    price.textContent = `$${book.price}`;
+  }
+
+  const heading = document.createElement('div');
+  heading.className = 'books__readme-content';
+  heading.append(title, price);
+
+  const author = document.createElement('p');
+  author.className = 'books__author';
+  author.textContent = book.author || 'Unknown author';
+
+  const button = document.createElement('button');
+  button.className = 'books-list__btn';
+  button.type = 'button';
+  button.textContent = 'Learn More';
+  button.dataset.bookId = book._id || '';
+  button.disabled = !book._id;
+
+  card.append(heading, author, button);
+  return card;
 }
 
-function createBookCardMarkup(book) {
-  const id = book._id || '';
-  const image = book.book_image || '';
-  const title = book.title || 'Untitled';
-  const author = book.author || 'Unknown author';
-  const price = book.price || '';
-
-  return `
-    <li class="books-list__item" data-book-id="${id}">
-      <img
-        class="books-list__image"
-        src="${image}"
-        alt="${title}"
-        loading="lazy"
-      />
-      <h3 class="books-list__title">${title}</h3>
-      <p class="books-list__author">${author}</p>
-      <p class="books-list__price">${price}</p>
-      <button
-        class="books-list__btn"
-        type="button"
-        data-book-id="${id}"
-      >
-        Learn More
-      </button>
-    </li>
-  `;
+export function getBooksLimit() {
+  if (window.innerWidth >= 1440) return 24;
+  if (window.innerWidth >= 768) return 16;
+  return 10;
 }
 
 export function renderBooksList(
   listElement,
   books,
-  limit = getDefaultBooksLimit()
+  limit = window.innerWidth >= 1440 ? 24 : 10
 ) {
-  if (!listElement || !Array.isArray(books)) {
-    return;
-  }
+  if (!listElement || !Array.isArray(books)) return;
 
   const visibleBooks =
     typeof limit === 'number' ? books.slice(0, limit) : books;
-  const markup = visibleBooks.map(createBookCardMarkup).join('');
-
-  listElement.innerHTML = markup;
+  listElement.replaceChildren(...visibleBooks.map(createBookCard));
 }

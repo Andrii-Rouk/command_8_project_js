@@ -31,7 +31,7 @@
 .feedbacks-list {
   /* display: grid; */
   grid-template-columns: 1fr;
-  gap: 24px;
+
   margin: 0 0 32px;
   padding: 0;
   list-style: none;

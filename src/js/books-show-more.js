@@ -23,7 +23,16 @@ export function initBooksShowMore({
   let isLoading = false;
 
   function updateUI() {
-    counter.textContent = `Showing ${visibleCount} of ${total}`;
+    const visibleElement = counter.querySelector('.books__visible');
+    const totalElement = counter.querySelector('.books__total');
+
+    if (visibleElement && totalElement) {
+      visibleElement.textContent = visibleCount;
+      totalElement.textContent = total;
+    } else {
+      counter.textContent = `Showing ${visibleCount} of ${total}`;
+    }
+
     button.hidden = visibleCount >= total;
   }
 
