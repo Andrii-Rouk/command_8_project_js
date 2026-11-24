@@ -129,13 +129,41 @@
   padding: 0;
   border: none;
   border-radius: 0;
+  color: #ffffff;
   background-color: var(--color-accent);
   cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    opacity 200ms ease;
+}
+
+.feedbacks-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.feedbacks-btn:hover,
+.feedbacks-btn:focus-visible {
+  background-color: #fceee6;
+  color: #0b0500;
+  border-color: #0b0500;
+  outline: none;
+}
+
+.feedbacks-btn:active:not(:disabled) {
+  background-color: #3b1906;
+  color: #ffffff;
+  border-color: #3b1906;
 }
 
 .feedbacks-btn:disabled {
   opacity: 0.2;
   cursor: default;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -151,6 +179,10 @@
     font-family: var(--font-family-display, 'Gloock', serif);
     font-weight: 400;
     font-size: 48px;
+  }
+
+  .feedbacks-controls {
+    display: none;
   }
 }
 
