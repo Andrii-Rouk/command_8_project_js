@@ -51,6 +51,9 @@
   .article__image {
     height: 474px;
   }
+  .article__title {
+    font-size: 40px;
+  }
 }
 
 @media (min-width: 1440px) {
