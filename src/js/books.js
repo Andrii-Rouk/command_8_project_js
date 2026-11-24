@@ -7,7 +7,7 @@ import { renderBookCategories } from './books-categories-render.js';
 import { renderBooksList } from './books-list-render.js';
 import { initBooksFilter } from './books-filter.js';
 import { initBooksShowMore } from './books-show-more.js';
-import './loader.js';
+import { withLoader } from './loader.js';
 
 const section = document.querySelector('#books');
 
@@ -21,7 +21,7 @@ async function initBookCategories() {
 
   if (!categoriesList || !categoriesSelect) return;
 
-  const categories = await getCategoryList().catch(() => []);
+  const categories = await withLoader(getCategoryList).catch(() => []);
   renderBookCategories(categoriesList, categories, categoriesSelect);
 
   initBooksFilter({
@@ -65,9 +65,9 @@ async function initTopBooks(category = '') {
   }
 
   try {
-    const response = category
-      ? await getBooksByCategory(category)
-      : await getTopBooks();
+    const response = await withLoader(() =>
+      category ? getBooksByCategory(category) : getTopBooks()
+    );
 
     if (requestId !== latestBooksRequest) return;
 
