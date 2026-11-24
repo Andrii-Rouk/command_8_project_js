@@ -134,6 +134,11 @@
   cursor: pointer;
 }
 
+.feedbacks-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
 @media screen and (min-width: 768px) {
   .feedbacks-title {
     font-family: var(--font-family-base, 'Rubik', sans-serif);
