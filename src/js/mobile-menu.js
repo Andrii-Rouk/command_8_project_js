@@ -1,5 +1,5 @@
-const menuToggle = document.querySelector('.headermenu-toggle');
-const navigation = document.querySelector('.headernavigation');
+const menuToggle = document.querySelector('.header__menu-toggle');
+const navigation = document.querySelector('.header__navigation');
 
 if (menuToggle && navigation) {
   const navLinks = navigation.querySelectorAll('a');
@@ -22,7 +22,10 @@ if (menuToggle && navigation) {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    if (
+      event.key === 'Escape' &&
+      menuToggle.getAttribute('aria-expanded') === 'true'
+    ) {
       setMenuState(false);
       menuToggle.focus();
     }
