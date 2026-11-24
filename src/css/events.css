@@ -298,8 +298,10 @@
   }
 }
 
-.events__arrow:hover {
-  background-color: var(--color-text);
+@media (hover: hover) {
+  .events__arrow:enabled:hover {
+    background-color: #fceee6;
+  }
 }
 
 .events__register:hover {
