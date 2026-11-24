@@ -1,34 +1,30 @@
 <section class="books" id="books">
-   <h2 class="visually-hidden">Trending books</h2>
+  <h2 class="visually-hidden">Trending books</h2>
 
-   <div class="container books__container">
+  <div class="container books__container">
+    <aside class="books__sidebar">
+      <div class="books__header">
+        <p class="books__heading">Books</p>
 
-      <aside class="books__sidebar">
-         <div class="books__header">
-            <h3 class="books__heading">Books</h3>
-
-            <p class="books__count">
-               Showing <span class="books__visible">0</span>
-               of <span class="books__total">0</span>
-            </p>
-         </div>
-
-         <div class="categories">
-            <ul class="categories__list"></ul>
-
-            <select class="category-select" aria-label="Categories">
-               <option value="" selected>All categories</option>
-            </select>
-         </div>
-      </aside>
-
-      <div class="books__content">
-         <ul class="books__list"></ul>
-
-         <button class="books__show-more" type="button" hidden>
-            Show More
-         </button>
+        <p class="books__count">
+          Showing <span class="books__visible">0</span> of
+          <span class="books__total">0</span>
+        </p>
       </div>
 
-   </div>
+      <div class="categories">
+        <ul class="categories__list"></ul>
+
+        <select class="category-select" aria-label="Categories">
+          <option value="" selected>All categories</option>
+        </select>
+      </div>
+    </aside>
+
+    <div class="books__content">
+      <ul class="books__list"></ul>
+
+      <button class="books__show-more" type="button" hidden>Show More</button>
+    </div>
+  </div>
 </section>
