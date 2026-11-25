@@ -37,17 +37,31 @@
       aria-label="Main navigation"
     >
       <ul class="header__nav-list">
-        <li><a class="header__nav-link" href="#home">Home</a></li>
-        <li><a class="header__nav-link" href="#books">Books</a></li>
         <li>
-          <a class="header__nav-link" href="./shopping-list.html"
+          <a class="header__nav-link" href="{=$home-prefix}#home">Home</a>
+        </li>
+        <li>
+          <a class="header__nav-link" href="{=$home-prefix}#books">Books</a>
+        </li>
+        <li>
+          <a class="header__nav-link" href="{=$home-prefix}/shopping-list.html"
             >Shopping List</a
           >
         </li>
 
-        <li><a class="header__nav-link" href="#feedbacks">Feedbacks</a></li>
-        <li><a class="header__nav-link" href="#events">Events</a></li>
-        <li><a class="header__nav-link" href="#location">Location</a></li>
+        <li>
+          <a class="header__nav-link" href="{=$home-prefix}#feedbacks"
+            >Feedbacks</a
+          >
+        </li>
+        <li>
+          <a class="header__nav-link" href="{=$home-prefix}#events">Events</a>
+        </li>
+        <li>
+          <a class="header__nav-link" href="{=$home-prefix}#location"
+            >Location</a
+          >
+        </li>
       </ul>
     </nav>
   </div>

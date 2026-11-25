@@ -11,6 +11,7 @@ const backdrop = document.querySelector('.book-modal-backdrop');
 const closeButton = document.querySelector('.book-modal-close');
 
 const bookImage = document.querySelector('.book-modal-image');
+const bookImagePlaceholder = bookImage.getAttribute('src');
 const bookTitle = document.querySelector('.book-modal-title');
 const bookAuthor = document.querySelector('.book-modal-author');
 const bookPrice = document.querySelector('.book-modal-price');
@@ -45,10 +46,10 @@ const RETURNS_TEXT =
 
 function fillModal(book) {
   selectedBook = book;
-  bookImage.src = book.book_image || '';
+  bookImage.src = book.book_image || bookImagePlaceholder;
   bookImage.alt = book.title || 'Обкладинка обраної книги';
 
-  bookTitle.textContent = book.title || '';
+  bookTitle.textContent = book.title || 'Book details';
   bookAuthor.textContent = book.author || '';
   bookPrice.textContent = book.price || '';
 
